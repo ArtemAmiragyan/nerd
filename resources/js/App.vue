@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import FrontLayout from '@layouts/BaseFrontLayout.vue';
+import FrontLayout from '@/layouts/BaseFrontLayout.vue';
 import { RouteMeta, useRoute } from 'vue-router';
 import { shallowRef, watch } from 'vue';
 
@@ -15,6 +15,7 @@ const route = useRoute();
 const setLayout = async (routeMeta: RouteMeta | { layout: string }) => {
     if (!routeMeta.layout) {
         layout.value = FrontLayout;
+
 
         return;
     }
