@@ -1,7 +1,7 @@
 <template>
-    <component :is="layout">
-        <router-view />
-    </component>
+  <component :is="layout">
+    <router-view/>
+  </component>
 </template>
 
 <script setup lang="ts">
@@ -13,25 +13,25 @@ const layout = shallowRef(FrontLayout);
 const route = useRoute();
 
 const setLayout = async (routeMeta: RouteMeta | { layout: string }) => {
-    if (!routeMeta.layout) {
-        layout.value = FrontLayout;
+  if (!routeMeta.layout) {
+    layout.value = FrontLayout;
 
-        return;
-    }
+    return;
+  }
 
-    try {
-        const component = await import(`./layouts/${routeMeta.layout}.vue`);
+  try {
+    const component = await import(`./layouts/${routeMeta.layout}.vue`);
 
-        layout.value = component?.default || FrontLayout;
-    } catch (e) {
-        layout.value = FrontLayout;
-    }
+    layout.value = component?.default || FrontLayout;
+  } catch (e) {
+    layout.value = FrontLayout;
+  }
 };
 
 setLayout(route.meta);
 
 watch(
-    () => route.meta,
-    async (meta) => setLayout(meta),
+  () => route.meta,
+  async (meta) => setLayout(meta),
 );
 </script>
