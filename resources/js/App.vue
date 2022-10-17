@@ -20,7 +20,7 @@ const setLayout = async (routeMeta: RouteMeta | { layout: string }) => {
   }
 
   try {
-    const component = await import(`./layouts/${routeMeta.layout}.vue`);
+    const component = await import(`@/layouts/${routeMeta.layout}.vue`);
 
     layout.value = component?.default || FrontLayout;
   } catch (e) {
