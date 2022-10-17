@@ -2,7 +2,7 @@
   <header>
     <div class="container">
       <router-link class="header__logo-wrapper" :to="{name: 'home'}">
-        <img class="header__logo" alt="logo" src="/assets/images/logo.png"/>
+        <img class="header__logo" alt="logo" src="@/assets/images/logo.png"/>
       </router-link>
 
       <BaseHeaderFilters/>
