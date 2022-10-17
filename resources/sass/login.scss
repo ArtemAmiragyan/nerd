@@ -1,0 +1,27 @@
+.login-page {
+  padding-top: 70px;
+  .container:only-child {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__form {
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  &__form-item {
+    display: flex;
+    flex-direction: column;
+
+    &:not(:first-child) {
+      margin-top: 10px;
+    }
+  }
+
+  &__form-submit {
+    margin-top: 10px;
+  }
+}

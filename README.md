@@ -21,12 +21,12 @@ php artisan key:generate
 php artisan migrate --seed 
 ````
 
-### Run tests and static analysis:
-````
-composer test  
-````
-
 ### Build front-end:
 ````
 yarn && yarn build 
+````
+
+### Run tests and static analysis:
+````
+composer test  
 ````
